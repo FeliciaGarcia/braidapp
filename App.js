@@ -1,23 +1,20 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { View, Image, Text } from 'react-native';
+import { Card, ListItem, Button, Icon } from 'react-native-elements';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
-  }
+export default class LotsOfStyles extends Component {
+    render() {
+        return (
+          <View>
+              <Card>
+                  <Image source={{uri: 'https://i.imgur.com/XVrWugu.jpg'}} style={{width: 300, height: 250, }} />
+                  <Text>styles by Lisa</Text>
+                  <Text>Atlanta, GA</Text>
+              </Card>
+          </View>
+        );
+    }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+
