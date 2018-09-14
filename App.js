@@ -17,6 +17,7 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
+//initializing firebase
 
 function writeUserData() {
     firebase.database().ref().set({
@@ -32,6 +33,7 @@ export default class Braiders extends Component {
     render() {
         writeUserData();
         return (
+          //posts of braid styles
           <View>
               <Card>
                   <Image class="cardImage" source={{uri: 'https://i.imgur.com/XVrWugu.jpg'}} />
