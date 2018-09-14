@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Image, Text } from 'react-native';
 import { Card, ListItem, Button, Icon } from 'react-native-elements';
 import firebase from 'firebase';
+import './styles/app.css';
 
 const config = {
     apiKey: "AIzaSyBsUTAkpJkVM2_xcK21W3cex-eaY5vesM0",
@@ -19,9 +20,9 @@ const database = firebase.database();
 
 function writeUserData() {
     firebase.database().ref().set({
-        username: "Felicia",
-        email: "felicia@gmail.com",
-        profile_picture : "https://i.imgur.com/XVrWugu.jpg"
+        caption: "kanekalon",
+        name: "Felicia",
+        photo : "https://i.imgur.com/XVrWugu.jpg"
     });
 }
 
@@ -33,16 +34,22 @@ export default class Braiders extends Component {
         return (
           <View>
               <Card>
-                  <Image source={{uri: 'https://i.imgur.com/XVrWugu.jpg'}} style={{width: 300, height: 250,}}/>
-                  <Text>Styles by Lisa</Text>
-                  <Text>Atlanta, GA</Text>
+                  <Image class="cardImage" source={{uri: 'https://i.imgur.com/XVrWugu.jpg'}} />
+                  <Text class="cardCaption">Kanekalon braids</Text>
+                  <Text class="cardName">Styles by Lisa</Text>
                   <Button
-                    backgroundColor='#ffcc00'
-                    title='book this braider'
 
+                    title='book this braider'
                   />
               </Card>
+            <Button
+
+              title="show off your work" />
           </View>
+
         );
     }
+
 }
+
+
