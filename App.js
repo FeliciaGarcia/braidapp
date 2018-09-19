@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Image, Text } from 'react-native';
 import { Card, ListItem, Button, Icon } from 'react-native-elements';
 import firebase from 'firebase';
-import './styles/app.css';
+
 
 const config = {
     apiKey: "AIzaSyBsUTAkpJkVM2_xcK21W3cex-eaY5vesM0",
@@ -36,9 +36,9 @@ export default class Braiders extends Component {
           //posts of braid styles
           <View>
               <Card>
-                  <Image class="cardImage" source={{uri: 'https://i.imgur.com/XVrWugu.jpg'}} />
-                  <Text class="cardCaption">Kanekalon braids</Text>
-                  <Text class="cardName">Styles by Lisa</Text>
+                  <Image style={styles.image} source={{uri: 'https://i.imgur.com/XVrWugu.jpg'}} />
+                  <Text style={styles.title}>Kanekalon braids</Text>
+                  <Text style={styles.name}>Styles by Lisa</Text>
                   <Button
 
                     title='book this braider'
@@ -54,4 +54,10 @@ export default class Braiders extends Component {
 
 }
 
-
+const styles = {
+   image: {
+       marginTop: 20,
+        width: 300,
+       height: 200
+   }
+};
