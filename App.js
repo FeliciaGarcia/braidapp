@@ -59,5 +59,11 @@ const styles = {
        marginTop: 20,
         width: 300,
        height: 200
-   }
+   },
+    title: {
+
+    },
+    name: {
+       
+    }
 };
