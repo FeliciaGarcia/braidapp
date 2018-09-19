@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { View, Image, Text } from 'react-native';
 import { Card, ListItem, Button, Icon } from 'react-native-elements';
+
+import { createStackNavigator } from 'react-navigation';
+
+
 // import firebase from 'firebase';
 
 
@@ -31,13 +35,12 @@ export default class Braiders extends Component {
                   <Text style={styles.title}>Kanekalon braids</Text>
                   <Text style={styles.name}>Styles by Lisa</Text>
                   <Button
-
-                    title='book this braider'
+                    title='link up'
                   />
               </Card>
             <Button
-
               title="show off your work" />
+
           </View>
 
         );
@@ -58,3 +61,6 @@ const styles = {
 
     }
 };
+
+
+
