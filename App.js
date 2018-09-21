@@ -1,35 +1,44 @@
 import React, { Component } from 'react';
 import { View, Image, Text } from 'react-native';
 import { Card, ListItem, Button, Icon } from 'react-native-elements';
-
-import { createStackNavigator } from 'react-navigation';
-
-
-// import firebase from 'firebase';
+import firebase from 'firebase';
+import Routes from './src/components/routes/Routes.js';
 
 
+const config = {
+    apiKey: "AIzaSyBsUTAkpJkVM2_xcK21W3cex-eaY5vesM0",
+    authDomain: "braids-app.firebaseapp.com",
+    databaseURL: "https://braids-app.firebaseio.com",
+    projectId: "braids-app",
+    storageBucket: "braids-app.appspot.com",
+    messagingSenderId: "451322916581"
+};
+firebase.initializeApp(config);
+
+const database = firebase.database();
+
+// initializing firebase
+
+function writeUserData() {
+    firebase.database().ref().set({
+        caption: "kanekalon",
+        name: "Felicia",
+        photo : "https://i.imgur.com/XVrWugu.jpg",
+        location: "100 main street"
+    });
+}
 
 
-//const database = firebase.database();
-
-//initializing firebase
-
-// function writeUserData() {
-//     firebase.database().ref().set({
-//         caption: "kanekalon",
-//         name: "Felicia",
-//         photo : "https://i.imgur.com/XVrWugu.jpg"
-//     });
-// }
 
 export default class Braiders extends Component {
 
 
     render() {
-        // writeUserData();
+        writeUserData();
         return (
           //posts of braid styles
           <View>
+              <Routes />
               <Card>
                   <Image style={styles.image} source={{uri: 'https://i.imgur.com/XVrWugu.jpg'}} />
                   <Text style={styles.title}>Kanekalon braids</Text>
@@ -53,13 +62,8 @@ const styles = {
        marginTop: 20,
         width: 300,
        height: 200
-   },
-    title: {
+   }
 
-    },
-    name: {
-
-    }
 };
 
 
